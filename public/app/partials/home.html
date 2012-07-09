@@ -1,0 +1,22 @@
+
+<div id="login" ng-controller="LoginController">
+	<h1>Sign In</h1>
+	<p>Enter you username and password to sign in.</p>
+	<form name="loginform" class="css-form" novalidate>
+		<fieldset>
+			<div ng-show="loginform.email.$invalid && loginform.email.$dirty" class="alert alert alert-error">
+  			  <button class="close" data-dismiss="alert">×</button>
+	          <span ng-show="loginform.email.$error.required">You need to enter your email.</span>
+	          <span ng-show="loginform.email.$error.email">Your email is not valid.</span>
+	        </div>
+			<input type="email" name="email" placeholder="Email" ng-model="user.email" required/><br />
+			<input type="password" name="password" placeholder="Password" ng-model="user.password" required></input>
+			<span class="clear"></span>
+			<a class="btn btn-large" href="#/register" title="Create an account">Create an account</a>
+			<button  class="btn btn-primary btn-large" ng-click="login(user)"  ng-disabled="loginform.$invalid">Sign in</button>
+
+		</fieldset>
+		
+	</form>
+</div>
+
